@@ -14,14 +14,14 @@ char
              
 */
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[argc + 1])
 {
     int i = 0;
     int j = 0;
     // Finding the contents for the string and storing them into my temp
     char temp_str[100][50] = { "" };       
     // loop to check all the wrods up to 100 for the stdin
-    for (i = 0; i < 100; ++i) {   
+    while(i < 100) {   
         if (!fgets (temp_str[i], sizeof temp_str[i], stdin)) {
             break; 
         }
@@ -30,14 +30,16 @@ int main(int argc, char* argv[])
         if (temp_str[i][len-1] == '\n') {
             temp_str[i][--len] = 0;     
         }
+        ++i;
     }
     j = i;
     putchar('\n');
     // creating a word counter to store the words that are repeated 
     int word_counter;
     word_counter = 1;
+    i = 1;
     // check over and if the words are equal to each other then keeping adding to the counter
-    for (i = 1; i < 100; ++i){
+    while(i < 100){
         if (strcmp(temp_str[i-1],temp_str[i]) == 0){
             word_counter++;
             // print out the contents if the last string is met 
@@ -50,7 +52,7 @@ int main(int argc, char* argv[])
             printf ("%d %s\n", word_counter, temp_str[i-1]);
             word_counter = 1;
         }
-        
+        ++i;
     }    
         
 }
