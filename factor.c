@@ -27,7 +27,7 @@ void factorCheck(signed int x)
         x = x / 2;
     }
  // n is now odd so find the sqrt using math.h
-    for (int i = 3; i <= sqrt(x); i = i + 2)
+    for (int i = 3; i <= sqrt(x); i += 2)
     {
         // while n is not leaving a reminder print out i 
         while (x % i == 0)
@@ -38,7 +38,7 @@ void factorCheck(signed int x)
     }
 }
  // driver for test cases
-int main()
+int main(int argc, char* argv[argc + 1])
 {
     signed int x;
     scanf("%d", &x);
