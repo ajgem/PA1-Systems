@@ -19,29 +19,29 @@ output
 #include <math.h>
  
 // prints factors of prime
-void factorCheck(int n)
+void factorCheck(signed int x)
 {
     while (n % 2 == 0)
     {
         printf("%d ", 2);
-        n = n / 2;
+        x = x / 2;
     }
  // n is now odd so find the sqrt using math.h
     for (int i = 3; i <= sqrt(n); i = i + 2)
     {
         // while n is not leaving a reminder print out i 
-        while (n % i == 0)
+        while (x % i == 0)
         {
             printf("%d ", i);
-            n = n / i;
+            x = x / i;
         }
     }
 }
  // driver for test cases
 int main()
 {
-    signed int n;
-    scanf("%d", &n);
-    factorCheck(n);
+    signed int x;
+    scanf("%d", &x);
+    factorCheck(x);
     return EXIT_SUCCESS;
 }
