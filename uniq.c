@@ -17,7 +17,7 @@ char
 int main(int argc, char* argv[])
 {
     int i = 0;
-    int N = 0;
+    int j = 0;
     // Finding the contents for the string and storing them into my temp
     char temp_str[100][50] = { "" };       
     // loop to check all the wrods up to 100 for the stdin
@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
             temp_str[i][--len] = 0;     
         }
     }
-    N = i;
+    j = i;
     putchar('\n');
     // creating a word counter to store the words that are repeated 
     int word_counter;
@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
         if (strcmp(temp_str[i-1],temp_str[i]) == 0){
             word_counter++;
             // print out the contents if the last string is met 
-            if (i == N-1){
+            if (i == j-1){
                 printf ("%d %s\n", word_counter, temp_str[i-1]);
                 return 0;
             }
