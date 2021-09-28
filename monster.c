@@ -42,6 +42,7 @@ int main(int argc, char* argv[]){
 
   scanf("%c", &choice);
 
+ while (gameBoard[playX][playY] != gameBoard[monX][monY] || gameBoard[playX][playY] != gameBoard[goalX][goalY]){
   for (int i = 0; i < row; i++){
     for (int j = 0; j < col; j++){
     if (choice == 'N'){
@@ -71,6 +72,12 @@ int main(int argc, char* argv[]){
     }
     printf("\n");
     }
-
+ }
+  if (gameBoard[playX][playY] == gameBoard[monX][monY]){
+    printf("monster wins!");
+  }
+  else if (gameBoard[playX][playY] == gameBoard[goalX][goalY]){
+    printf("player wins!");
+  }
   return 0;
 }
