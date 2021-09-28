@@ -41,7 +41,7 @@ void factorCheck(signed int x)
 int main(int argc, char* argv[argc + 1])
 {
     signed int x = atoi(argv[1]);
-    // scanf("%d\n", x);
+    // scanf("%d", x);
     factorCheck(x);
     return EXIT_SUCCESS;
 }
