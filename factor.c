@@ -19,32 +19,29 @@ output
 #include <math.h>
  
 // prints factors of prime
-void factorCheck(signed int x)
-{
-    while (x % 2 == 0)
-    {
-        printf("%d ", 2);
-        x = x / 2;
-    }
-    int root;
-    root = pow(x,0.5);
- // n is now odd so find the sqrt using math.h
-    for (int i = 3; i <= root; i += 2)
-    {
-        // while n is not leaving a reminder print out i 
-        while (x % i == 0)
-        {
-            printf("%d ", i);
-            x = x / i;
-        }
-    }
-}
- // driver for test cases
-int main(int argc, char* argv[argc + 1])
-{
-    signed int x = atoi(argv[1]);
-    // runs with scanf as input from user but needs to be from command line
-    // scanf("%d", x);
-    factorCheck(x);
-    return EXIT_SUCCESS;
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+void factorCheck(int x)  
+{  
+    int target_number;  
+    // checking the number starting at 2 to make sure it is greater than increment
+    for(target_number = 2; x > 1; ++target_number)  
+    {  
+        // while the number is still equalling out
+        while(x % target_number == 0)  
+        {  
+            printf("%d ", target_number);  
+            x = x / target_number;  
+        }  
+    }  
+}  
+  // driver for test cases
+int main(int argc, char* argv[argc + 1])  
+{  
+    int factor;  
+    scanf("%d", &factor);  
+    factorCheck(factor);  
+    return EXIT_SUCCESS;  
+}  
