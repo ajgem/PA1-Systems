@@ -26,8 +26,10 @@ void factorCheck(signed int x)
         printf("%d ", 2);
         x = x / 2;
     }
+    int root;
+    root = pow(x,0.5);
  // n is now odd so find the sqrt using math.h
-    for (int i = 3; i <= sqrt(x); i += 2)
+    for (int i = 3; i <= root; i += 2)
     {
         // while n is not leaving a reminder print out i 
         while (x % i == 0)
