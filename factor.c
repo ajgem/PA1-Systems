@@ -40,8 +40,10 @@ void factorCheck(int x)
   // driver for test cases
 int main(int argc, char* argv[argc + 1])  
 {  
-    int factor;  
-    scanf("%d", &factor);  
+    int factor = atoi(argv[1]);
+    // works with scanf
+   // scanf("%d", &factor);  
+    
     factorCheck(factor);  
     return EXIT_SUCCESS;  
 }  
