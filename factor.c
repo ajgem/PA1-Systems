@@ -43,6 +43,7 @@ void factorCheck(signed int x)
 int main(int argc, char* argv[argc + 1])
 {
     signed int x = atoi(argv[1]);
+    // runs with scanf as input from user but needs to be from command line
     // scanf("%d", x);
     factorCheck(x);
     return EXIT_SUCCESS;
